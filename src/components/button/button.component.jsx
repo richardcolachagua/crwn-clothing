@@ -1,21 +1,19 @@
-import './button.styles.scss';
+import "./button.styles.scss";
 
-const CategoryItem = ({ category }) => {
-  const { imageUrl, title } = category;
+export const BUTTON_TYPE_CLASSES = {
+  google: "google-sign-in",
+  inverted: "inverted",
+};
+
+const Button = ({ children, buttonType, ...otherProps }) => {
   return (
-    <div className='category-container'>
-      <div
-        className='background-image'
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
-      />
-      <div className='category-body-container'>
-        <h2>{title}</h2>
-        <p>Shop Now</p>
-      </div>
-    </div>
+    <button
+      className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}
+      {...otherProps}
+    >
+      {children}
+    </button>
   );
 };
 
-export default CategoryItem;
+export default Button;
