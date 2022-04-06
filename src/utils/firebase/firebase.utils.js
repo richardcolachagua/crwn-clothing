@@ -1,3 +1,5 @@
+import { initializeApp } from '@firebase/app';
+
 import {
   getAuth,
   signInWithRedirect,
@@ -29,7 +31,7 @@ const firebaseConfig = {
     measurementId: "G-TP418ZBPC8"
   };
 
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
